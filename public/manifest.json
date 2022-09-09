@@ -23,7 +23,7 @@
   ],
   "web_accessible_resources": [
     {
-      "resources": [ "/goingtowatch.html", "/popup.html"],
+      "resources": [ "/popup.html"],
       "matches": [ "https://m.youtube.com/*", "https://www.youtube.com/*" ]
     }
   ],
