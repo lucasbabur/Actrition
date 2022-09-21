@@ -9,8 +9,13 @@ function getTabInfo(tabId) {
     const currentUrl = String(tab.url);
     const extensionPageUrl = String(chrome.runtime.id)
 
-    // Map through the accepted urls and check if the current url is one of them. If extension page is the last url, do nothing.
     
+    // If it's a playlist, just returns. If it's not, then follow the code.
+    if (currentUrl.search("list") != -1) {
+      return 0;
+    }
+
+    // Map through the accepted urls and check if the current url is one of them. If extension page is the last url, do nothing.
     if (lastUrl.search(extensionPageUrl) == -1){
       acceptedUrls.map((acceptedUrl) => { if (currentUrl == acceptedUrl) { watching = ""; sendToPopup(tab.tabId) }});
     }
