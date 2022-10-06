@@ -21,7 +21,7 @@ function App () {
             setTicket("Wait 20 seconds...")
             setTimeout(() => {chrome.runtime.sendMessage(parseInt(time))}, 1000)
             setTimeout(() => {chrome.runtime.sendMessage(value)}, 2000)
-            setTimeout(() => {location.assign(url)}, 5000)
+            setTimeout(() => {location.assign(url)}, 20000)
             setButtonWriting(true)
             for (let i = 0; i < 20; i++){
                 setTimeout(() => {setTicket('Wait ' + (20 - i) + ' seconds...')}, (i * 1000))
