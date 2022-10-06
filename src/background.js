@@ -15,16 +15,18 @@ function getTabInfo(tabId) {
       return 0;
     }
 
-    // Map through the accepted urls and check if the current url is one of them. If extension page is the last url, do nothing.
-    if (lastUrl.search(extensionPageUrl) == -1){
-      acceptedUrls.map((acceptedUrl) => { if (currentUrl == acceptedUrl) { watching = ""; sendToPopup(tab.tabId) }});
-    }
-
     // If the currentUrl has watch, and watch is "", then set watch to currentUrl. If watch is not "", and currentUrl is not watch, then send to popup.
     if (currentUrl.search("watch") != -1) {
       if (watching == "") { watching = currentUrl } 
       else if (watching != currentUrl) { sendToPopup(tab.tabId) }
     }
+
+    // Map through the accepted urls and check if the current url is one of them. If extension page is the last url, do nothing.
+    if (lastUrl.search(extensionPageUrl) == -1){
+      acceptedUrls.map((acceptedUrl) => { if (currentUrl == acceptedUrl && currentUrl.search("watch") == -1) { watching = ""; sendToPopup(tab.tabId) }});
+    }
+
+    
 
     lastUrl = String(tab.url);
   });
