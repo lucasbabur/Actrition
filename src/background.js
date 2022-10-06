@@ -66,3 +66,9 @@ function sendToPopup(tabId){
     });
   }, 500);
 }
+
+// Padrão
+// https://yt3.ggpht.com/ytc/AMLnZu9XMOXt9eomL2-bICUdmY62Zk6aDc0nz0muqqztTA=s88-c-k-c0x00ffffff-no-rj
+// https://yt3.ggpht.com/ytc/AMLnZu9kXPa0XU-bwqb0V4aXR8RSqMeQl_YyNvjwDVqe=s88-c-k-c0x00ffffff-no-rj
+
+// https://www.youtube.com/c/FernandoUlrich_Oficial
